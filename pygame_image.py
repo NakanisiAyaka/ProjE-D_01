@@ -10,7 +10,7 @@ def main():
     tmr = 0
     kk_img = pg.image.load("ex01/fig/3.png")#練習２
     kk_img = pg.transform.flip(kk_img,True,False)#練習２
-    kk_img = [kk_img,pg.transform.rotozoom(kk_img,10,1.0)]#練習３
+    kk_img = [kk_img,pg.transform.rotozoom(kk_img,1,1.0),pg.transform.rotozoom(kk_img,2,1.0),pg.transform.rotozoom(kk_img,4,1.0),pg.transform.rotozoom(kk_img,6,1.0),pg.transform.rotozoom(kk_img,8,1.0),pg.transform.rotozoom(kk_img,10,1.0),pg.transform.rotozoom(kk_img,8,1.0),pg.transform.rotozoom(kk_img,6,1.0),pg.transform.rotozoom(kk_img,4,1.0),pg.transform.rotozoom(kk_img,2,1.0),pg.transform.rotozoom(kk_img,1,1.0)]#練習３
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
@@ -18,7 +18,7 @@ def main():
         x = tmr%1600
         screen.blit(bg_img, [-x, 0])#練習４
         screen.blit(bg_img, [1600-x,0])
-        screen.blit(kk_img[tmr%2], [300,200]) #練習５
+        screen.blit(kk_img[tmr%12], [300,200]) #練習５
         pg.display.update()
         tmr += 1        
         clock.tick(100)
